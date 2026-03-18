@@ -21,17 +21,17 @@ import { useQueryClient } from '@tanstack/react-query';
 import { commentQueryOptions, useCommentsQuery } from '@/queries/comments';
 
 type PostProps = StaticScreenProps<{
-	post_id: number;
+	postId: number;
 }>;
 
-function Post({ post_id }: PostProps['route']['params']) {
+function Post({ postId }: PostProps['route']['params']) {
 	const {
 		data: post,
 		isLoading,
 		isSuccess,
 		isError,
 		error,
-	} = usePostQuery(post_id);
+	} = usePostQuery(postId);
 
 	const favourites = useFavouritesStore(state => state.favourites);
 
@@ -109,20 +109,20 @@ function Post({ post_id }: PostProps['route']['params']) {
 
 			<View className="gap-3">
 				<Text className="text-xl font-bold">Comments</Text>
-				<Comments post_id={post_id} />
+				<Comments postId={postId} />
 			</View>
 		</View>
 	);
 }
 
-function Comments({ post_id }: PostProps['route']['params']) {
+function Comments({ postId }: PostProps['route']['params']) {
 	const {
 		data: comments,
 		isLoading,
 		isSuccess,
 		isError,
 		error,
-	} = useCommentsQuery(post_id);
+	} = useCommentsQuery(postId);
 
 	if (isLoading) {
 		return <Text className="mt-6 text-center">Loading Comments...</Text>;
@@ -165,15 +165,15 @@ export default function PostScreen({ route }: PostProps) {
 	const queryClient = useQueryClient();
 
 	useEffect(() => {
-		queryClient.prefetchQuery(commentQueryOptions(route.params.post_id));
-	}, [queryClient, route.params.post_id]);
+		queryClient.prefetchQuery(commentQueryOptions(route.params.postId));
+	}, [queryClient, route.params.postId]);
 
 	return (
 		<ScrollView
 			className="mb-safe"
 			contentContainerClassName="grow gap-6 px-6 py-6"
 		>
-			<Post post_id={route.params.post_id} />
+			<Post postId={route.params.postId} />
 		</ScrollView>
 	);
 }

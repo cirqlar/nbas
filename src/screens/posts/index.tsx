@@ -31,7 +31,7 @@ function Post({ post }: { post: TPost }) {
 			<Pressable
 				className=""
 				onPress={() => {
-					navigation.navigate('Post', { post_id: post.id });
+					navigation.navigate('Post', { postId: post.id });
 				}}
 			>
 				{({ pressed }) => (
