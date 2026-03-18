@@ -40,7 +40,7 @@ function Internal() {
 
 	return (
 		<>
-			<Text>Posts</Text>
+			<Text className="text-2xl">Posts</Text>
 
 			<FlatList
 				data={posts}
@@ -53,7 +53,7 @@ function Internal() {
 
 export default function Posts() {
 	return (
-		<View className="flex-1 m-safe">
+		<View className="m-safe flex-1 gap-3 px-3">
 			<Internal />
 		</View>
 	);

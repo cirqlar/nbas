@@ -38,7 +38,7 @@ export default function Post({ route }: PostProps) {
 	const navigation = useNavigation<AppNavigationProp>();
 
 	return (
-		<View className="flex-1 m-safe">
+		<View className="m-safe flex-1">
 			<TouchableOpacity
 				onPress={() => {
 					navigation.popTo('Posts');

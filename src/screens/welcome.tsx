@@ -1,11 +1,11 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function WelcomeScreen() {
 	const navigation = useNavigation();
 
 	return (
-		<View style={styles.container}>
+		<View className="flex-1 items-center justify-center">
 			<Text>Welcome</Text>
 			<TouchableOpacity
 				onPress={() => {
@@ -17,11 +17,3 @@ export default function WelcomeScreen() {
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
