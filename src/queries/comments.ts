@@ -10,7 +10,7 @@ import {
 	pipe,
 } from 'valibot';
 
-import { BASE_URL } from '@/queries/';
+import { BASE_URL } from '@/config/';
 import { throwFailedResponse } from '@/util/query';
 
 let CommentSchema = object({

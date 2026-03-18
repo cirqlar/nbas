@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { array, InferOutput, number, object, parse, string } from 'valibot';
 
-import { BASE_URL } from '@/queries/';
+import { BASE_URL } from '@/config/';
 import { throwFailedResponse } from '@/util/query';
 
 let PostSchema = object({
