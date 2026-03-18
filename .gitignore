@@ -76,3 +76,6 @@ yarn-error.log
 
 # IDE
 .vscode/*
+
+# Android
+**/bugreport-*.zip

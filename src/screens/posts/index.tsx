@@ -1,27 +1,60 @@
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function Posts() {
+import { TPost, usePostsQuery } from '@/queries/posts';
+
+function Post({ post }: { post: TPost }) {
 	const navigation = useNavigation();
 
 	return (
-		<View style={styles.container}>
-			<Text>Posts</Text>
+		<View key={post.id}>
+			<Text>{post.title}</Text>
+			<Text>{post.body}</Text>
 			<TouchableOpacity
 				onPress={() => {
-					navigation.navigate('Post', { post_id: 1 });
+					navigation.navigate('Post', { post_id: post.id });
 				}}
 			>
-				<Text>Post</Text>
+				<Text>View Post</Text>
 			</TouchableOpacity>
 		</View>
 	);
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
+function Internal() {
+	const {
+		data: posts,
+		isSuccess,
+		error,
+		isError,
+		isLoading,
+	} = usePostsQuery();
+
+	if (isLoading) {
+		return <Text>Loading</Text>;
+	}
+
+	if (isError || !isSuccess) {
+		return <Text>An error happened {error?.message}</Text>;
+	}
+
+	return (
+		<>
+			<Text>Posts</Text>
+
+			<FlatList
+				data={posts}
+				renderItem={({ item }) => <Post post={item} />}
+				keyExtractor={item => item.id.toString()}
+			/>
+		</>
+	);
+}
+
+export default function Posts() {
+	return (
+		<View className="flex-1 m-safe">
+			<Internal />
+		</View>
+	);
+}
