@@ -7,17 +7,15 @@ import {
 	StaticParamList,
 } from '@react-navigation/native';
 
-import WelcomeScreen from '@/screens/welcome';
 import Posts from '@/screens/posts';
 import Post from '@/screens/posts/post';
 
 const RootStack = createNativeStackNavigator({
-	initialRouteName: 'Welcome',
+	initialRouteName: 'Posts',
 	screenOptions: {
 		headerShown: false,
 	},
 	screens: {
-		Welcome: WelcomeScreen,
 		Posts: Posts,
 		Post: {
 			screen: Post,
