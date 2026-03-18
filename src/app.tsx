@@ -5,6 +5,8 @@ import NetInfo from '@react-native-community/netinfo';
 import { Navigation } from '@/routes';
 import queryClient from '@/queries';
 
+import './global.css';
+
 export default function App() {
 	useEffect(() => {
 		onlineManager.setEventListener(setOnline => {
