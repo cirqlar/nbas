@@ -19,7 +19,10 @@ const RootStack = createNativeStackNavigator({
 	screens: {
 		Welcome: WelcomeScreen,
 		Posts: Posts,
-		Post: Post,
+		Post: {
+			screen: Post,
+			options: { headerShown: true, headerTitle: '' },
+		},
 	},
 });
 
