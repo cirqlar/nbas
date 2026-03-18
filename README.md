@@ -6,9 +6,9 @@ This is a simple [**React Native**](https://reactnative.dev) project, bootstrapp
 
 ## Step 1: Start Metro
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+First, run **Metro**, the JavaScript build tool for React Native.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+To start the Metro dev server, run the following command from the root of the React Native project:
 
 ```sh
 # Using npm
@@ -20,7 +20,7 @@ yarn start
 
 ## Step 2: Build and run the app
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run for Android or iOS:
+With Metro running, open a new terminal window/pane from the root of the React Native project, and use one of the following commands to build and run for Android or iOS:
 
 ### Android
 
