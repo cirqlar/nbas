@@ -54,6 +54,16 @@ npm run ios
 
 If everything is set up correctly, you should see the app running in the Android Emulator, iOS Simulator, or your connected device.
 
+# Testing
+
+Use the following command to run tests.
+
+```sh
+npm test
+```
+
+> **Note**: Make sure to install dependencies with `npm install` if you haven't done so.
+
 # Packages and Architecture
 
 - Routing:
@@ -69,3 +79,7 @@ If everything is set up correctly, you should see the app running in the Android
   - Some [Storybookjs Icons](https://github.com/storybookjs/icons) are reproduced in this project
 - Validation:
   - [Valibot](https://github.com/open-circle/valibot) is used for validating API returns
+- Testing:
+  - [Jest](https://github.com/jestjs/jest)
+  - [React Native Testing Library](https://github.com/callstack/react-native-testing-library)
+  - [msw](https://github.com/mswjs/msw) for mocking network requests
