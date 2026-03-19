@@ -63,9 +63,9 @@ If everything is set up correctly, you should see the app running in the Android
   - [Async Storage](https://github.com/react-native-async-storage/async-storage) is used (with zustand's persist middleware) to preserve state accross sessions.
   - [TanStack Query](https://github.com/tanstack/query) is used for managing/caching fetch requests.
 - Styling:
-  - [Uniwind](https://github.com/uni-stack/uniwind) which provide TailwindCSS bindings for React Native
+  - [Uniwind](https://github.com/uni-stack/uniwind) provides TailwindCSS bindings for React Native
   - [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) via uniwind
   - [React Native SVG](https://github.com/software-mansion/react-native-svg) for React Native SVG support
-  - Some [Storybookjs Icons](https://github.com/storybookjs/icons) are copied and used
+  - Some [Storybookjs Icons](https://github.com/storybookjs/icons) are reproduced in this project
 - Validation:
   - [Valibot](https://github.com/open-circle/valibot) is used for validating API returns
