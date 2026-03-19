@@ -66,6 +66,8 @@ npm test
 
 # Packages and Architecture
 
+## Packages
+
 - Routing:
   - [React Navigation](https://github.com/react-navigation/react-navigation)
 - State Management:
@@ -83,3 +85,18 @@ npm test
   - [Jest](https://github.com/jestjs/jest)
   - [React Native Testing Library](https://github.com/callstack/react-native-testing-library)
   - [msw](https://github.com/mswjs/msw) for mocking network requests
+
+## Architecture/Folder Structure
+
+- index.js/Root.tsx: Entry Point
+- \_\_mocks\_\_/: test mocks
+- test-utils/: Utilities for testing and setup files.
+  - setup.ts/setupEnv.ts: setup and mocks.
+- src/: App code
+  - screens/: The app's routes
+  - icons/: Icons used in the app
+  - config/: shared constants
+  - queries/: queries for the app (using fetch and tanstack query)
+  - stores/: stores for the app (using zustand)
+  - util/: utility functions
+- \*\*/\_\_tests\_\_/: Test files are co-located with the code they test in `__tests__` folders.
