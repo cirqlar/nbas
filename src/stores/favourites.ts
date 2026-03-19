@@ -25,7 +25,13 @@ export function removeFavourite(postId: number) {
 }
 
 export function addFavourite(postId: number) {
-	useFavouritesStore.setState(state => ({
-		favourites: [...state.favourites, postId],
-	}));
+	useFavouritesStore.setState(state => {
+		if (useFavouritesStore.getState().favourites.includes(postId)) {
+			return state;
+		} else {
+			return {
+				favourites: [...state.favourites, postId],
+			};
+		}
+	});
 }
