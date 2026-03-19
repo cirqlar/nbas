@@ -13,10 +13,16 @@ export function getTestQueryClient() {
 	});
 }
 
-export function render(ui: React.ReactElement) {
+export function Wrapper({ children }: { children: React.ReactNode }) {
 	const queryClient = getTestQueryClient();
 
-	return testing_render(
-		<QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>,
+	return (
+		<QueryClientProvider client={queryClient}>
+			{children}
+		</QueryClientProvider>
 	);
+}
+
+export function render(ui: React.ReactElement) {
+	return testing_render(<Wrapper>{ui}</Wrapper>);
 }
