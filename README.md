@@ -68,4 +68,4 @@ If everything is set up correctly, you should see the app running in the Android
   - [React Native SVG](https://github.com/software-mansion/react-native-svg) for React Native SVG support
   - Some [Storybookjs Icons](https://github.com/storybookjs/icons) are copied and used
 - Validation:
-  - [Valibot](https://github.com/open-circle/valibot) is used for validation API returns
+  - [Valibot](https://github.com/open-circle/valibot) is used for validating API returns
