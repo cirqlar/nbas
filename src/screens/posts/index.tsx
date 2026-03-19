@@ -29,6 +29,7 @@ function Post({ post }: { post: TPost }) {
 	return (
 		<View key={post.id} className="gap-2">
 			<Pressable
+				accessibilityRole="link"
 				className=""
 				onPress={() => {
 					navigation.navigate('Post', { postId: post.id });
@@ -41,7 +42,13 @@ function Post({ post }: { post: TPost }) {
 						>
 							{post.title}
 						</Text>
-						{isFavourite && <StarIcon width={20} height={20} />}
+						{isFavourite && (
+							<StarIcon
+								width={20}
+								height={20}
+								accessibilityLabel="Favourited"
+							/>
+						)}
 					</View>
 				)}
 			</Pressable>
@@ -98,7 +105,11 @@ function Internal() {
 	return (
 		<>
 			<View className="flex-row items-center">
-				<Pressable className="flex-1" onPress={() => setFilter(false)}>
+				<Pressable
+					accessibilityRole="checkbox"
+					className="flex-1"
+					onPress={() => setFilter(false)}
+				>
 					{({ pressed }) => (
 						<View
 							className={`items-center justify-center rounded-l-lg border border-r-0 border-gray-300 px-3 py-3 ${filter ? '' : 'border-blue-500 bg-blue-500'} ${pressed ? 'opacity-70' : ''}`}
@@ -109,7 +120,11 @@ function Internal() {
 						</View>
 					)}
 				</Pressable>
-				<Pressable className="flex-1" onPress={() => setFilter(true)}>
+				<Pressable
+					accessibilityRole="checkbox"
+					className="flex-1"
+					onPress={() => setFilter(true)}
+				>
 					{({ pressed }) => (
 						<View
 							className={`items-center justify-center rounded-r-lg border border-gray-300 px-3 py-3 ${filter ? 'border-blue-500 bg-blue-500' : ''} ${pressed ? 'opacity-70' : ''}`}

@@ -80,6 +80,7 @@ function Post({ postId }: PostProps['route']['params']) {
 
 				<View className="-mx-6 flex-row justify-end border-y-2 border-gray-300 px-6 py-3">
 					<Pressable
+						accessibilityRole="button"
 						className=""
 						onPress={() => {
 							if (isFavourite) {
