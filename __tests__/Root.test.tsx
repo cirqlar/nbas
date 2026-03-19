@@ -3,11 +3,11 @@
  */
 
 import React from 'react';
-import ReactTestRenderer from 'react-test-renderer';
+import { render, cleanupAsync } from '@testing-library/react-native';
 import Root from '../Root';
 
 test('renders correctly', async () => {
-	await ReactTestRenderer.act(() => {
-		ReactTestRenderer.create(<Root />);
-	});
+	render(<Root />);
+
+	await cleanupAsync();
 });
